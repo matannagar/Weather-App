@@ -5,13 +5,21 @@ const api = {
   base: "https://api.weatherapi.com/v1/"
 }
 
+
 function App() {
   const [query, setQuery] = useState('')
   const [weather, setWeather] = useState({})
 
   const search = evt => {
     if (evt.key === "Enter") {
-      fetch(`${api.base}current.json?key=${api.key}&q=${query}&aqi=no`)
+      fetch(`http://localhost:3001/getWeatherInfo/city?city=${query}`,
+        {
+          method: "GET",
+          headers: new Headers({
+            'Accept': 'application/json',
+            'Content-Type': 'application/json;charset=utf-8'
+          })
+        })
         .then(res => res.json())
         .then(result => {
           setWeather(result)
