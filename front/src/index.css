@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Heebo', sans-serif;
 }
 
 .app {
@@ -15,19 +17,73 @@ body {
   transition: 0.4 ease;
 }
 
-.app.warm {
-  /* background-image: url('./assets/warm-bg.jpg'); */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #f1f1f1;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: #dde4e6;
+}
+
+.row {
+  text-align:center;
+  align-content:center;
+  color:#FFF;
+  font-size: 18px;
+}
+
+.col {
+  float: left;
+  width: 33%;
+  padding: 10px;
+  height: 30px; /* Should be removed. Only for demonstration */
+}
+
+.intro {
+  width: 50%;
+  margin: 10px 75px 75px;
+  color: #929292;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
 }
 
 main {
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
+  background-color: #f1f1f1;
   padding: 25px;
 }
 
+.outer-box{
+  
+  display: inline-table;
+  background-color: #27737d;
+  border-radius: 16px;
+
+    margin-left: 25%;
+    margin-top:5%;
+    width: 400px;
+    height: 500px;
+}
+
 .search-box {
-  width: 100%;
-  margin: 0 0 75px;
+  width: 50%;
+  position: relative;
+  margin: 10px 75px 75px;
 }
 
 .search-box .search-bar {
@@ -61,44 +117,62 @@ main {
   font-size: 32px;
   font-weight: 500;
   text-align: center;
-  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
-.location-box .date {
+.location-box .date ,.country {
   color: #FFF;
   font-size: 20px;
   font-weight: 300;
-  font-style: italic;
   text-align: center;
-  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
 }
 
 .weather-box {
   text-align: center;
+  
 }
 
 .weather-box .temp {
-  position: relative;
-  display: inline-block;
-  margin: 30px auto;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-
   padding: 15px 25px;
-
   color: #FFF;
   font-size: 102px;
   font-weight: 900;
 
-  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
-  text-align: center;
-  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  
 }
 
 .weather-box .weather {
   color: #FFF;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
+/* Button design is taken from here:
+https://www.geeksforgeeks.org/how-to-put-a-responsive-clear-button-inside-html-input-text-field/ 
+*/
+
+input {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  outline: none;
+  height: 50px;
+  border-radius: 5px;
+}
+
+
+button {
+  position: absolute;
+  top: 0;
+  border-radius: 30px;
+  right: 0px;
+  z-index: 2;
+  border: none;
+  top: 2px;
+  width:100px;
+  height: 50px;
+  cursor: pointer;
+  color: white;
+  background-color: #046b3b;
+  transform: translateX(2px);
+}
