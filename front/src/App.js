@@ -14,7 +14,7 @@ function App() {
   const search = evt => {
     if (query !== '') {
       if (evt.key === "Enter" || evt.type === "click") {
-        fetch(`http://localhost:3001/getWeatherCity?city=${query}`,
+        fetch(`https://weatherapplication10.herokuapp.com/getWeatherCity?city=${query}`,
           {
             method: "GET",
             headers: new Headers({
@@ -116,7 +116,7 @@ function App() {
 
         </div>
         {/* right-side */}
-      </main >
+      </main>
 
     </div >
   );
