@@ -3,19 +3,29 @@ const axios = require('axios');
 const app = express();
 const port = 3001;
 
+/*
+configuartion data for accessing the weather API: 
+https://www.weatherapi.com/ 
+*/
 const api = {
+    // if this wasn't a home-assigment I would have placed the key inside .env file 
     key: "f0590670e28f43129d763516222806",
     base: "https://api.weatherapi.com/v1/"
 }
 
-
+/*
+Allowing CORS
+*/
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
-app.get('/getWeatherInfo/city/', async (req, resp) => {
+/*
+Allowing access to the server through /getWeatherCity/ request and extracting the city name
+*/
+app.get('/getWeatherCity/', async (req, resp) => {
     const city = req.query.city;
     let result;
     try {

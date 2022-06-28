@@ -12,21 +12,24 @@ function App() {
     we then reset the query to be "" again.
   */
   const search = evt => {
-    if (evt.key === "Enter" || evt.type === "click") {
-      fetch(`http://localhost:3001/getWeatherInfo/city?city=${query}`,
-        {
-          method: "GET",
-          headers: new Headers({
-            'Accept': 'application/json',
-            'Content-Type': 'application/json;charset=utf-8'
+    if (query !== '') {
+      if (evt.key === "Enter" || evt.type === "click") {
+        fetch(`http://localhost:3001/getWeatherCity?city=${query}`,
+          {
+            method: "GET",
+            headers: new Headers({
+              'Accept': 'application/json',
+              'Content-Type': 'application/json;charset=utf-8'
+            })
           })
-        })
-        .then(res => res.json())
-        .then(result => {
-          setWeather(result)
-          setQuery("")
-        })
+          .then(res => res.json())
+          .then(result => {
+            setWeather(result)
+            setQuery("")
+          })
+      }
     }
+
   }
 
   const dateGenerator = (d) => {
@@ -67,6 +70,13 @@ function App() {
               value={query}
               onClick={search}>Check</button>
           </div>
+          {(typeof weather.location !== "undefined") ? (
+            <div className="bottomPage">
+              <b>Latitude:</b> {weather.location.lat}<br />
+              <b>Longitude:</b> {weather.location.lon}<br />
+              <b>Accurate to:</b> {weather.location.localtime}
+            </div>) : ("")}
+
         </div>
         {/* left-side */}
         {/* RIGHT SIDE */}
@@ -83,6 +93,7 @@ function App() {
                 <div className="temp">
                   {weather.current.temp_c}°c
                 </div>
+                <img alt="logo" src={weather.current.condition.icon} height={100} width={150} />
                 <div className="weather">{weather.current.condition.text}</div>
                 <div className="row">
                   <div className="col">
@@ -102,6 +113,7 @@ function App() {
               </div>
             </div>
           ) : ('')}
+
         </div>
         {/* right-side */}
       </main >

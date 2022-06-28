@@ -19,7 +19,7 @@ body {
 
 .split {
   height: 100%;
-  width: 50%;
+  width: 55%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -37,6 +37,7 @@ body {
 .right {
   right: 0;
   background-color: #dde4e6;
+  
 }
 
 .row {
@@ -44,6 +45,7 @@ body {
   align-content:center;
   color:#FFF;
   font-size: 18px;
+  
 }
 
 .col {
@@ -51,6 +53,7 @@ body {
   width: 33%;
   padding: 10px;
   height: 30px; /* Should be removed. Only for demonstration */
+  
 }
 
 .intro {
@@ -60,12 +63,15 @@ body {
   font-size: 32px;
   font-weight: 500;
   text-align: center;
+  
+
 }
 
 main {
   min-height: 100vh;
   background-color: #f1f1f1;
   padding: 25px;
+  
 }
 
 .outer-box{
@@ -73,17 +79,20 @@ main {
   display: inline-table;
   background-color: #27737d;
   border-radius: 16px;
-
+  padding:20px;
     margin-left: 25%;
     margin-top:5%;
-    width: 400px;
-    height: 500px;
+    width: 450px;
+    height: 530px;
+  
+
 }
 
 .search-box {
   width: 50%;
   position: relative;
   margin: 10px 75px 75px;
+  
 }
 
 .search-box .search-bar {
@@ -124,20 +133,18 @@ main {
   font-size: 20px;
   font-weight: 300;
   text-align: center;
+  
 }
 
 .weather-box {
   text-align: center;
-  
-}
+  }
 
 .weather-box .temp {
-  padding: 15px 25px;
   color: #FFF;
   font-size: 102px;
   font-weight: 900;
-
-  
+    
 }
 
 .weather-box .weather {
@@ -145,6 +152,7 @@ main {
   font-size: 48px;
   font-weight: 500;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  
 }
 
 /* Button design is taken from here:
@@ -158,6 +166,7 @@ input {
   outline: none;
   height: 50px;
   border-radius: 5px;
+  
 }
 
 
@@ -175,4 +184,14 @@ button {
   color: white;
   background-color: #046b3b;
   transform: translateX(2px);
+  
+}
+
+.bottomPage{
+  color:#adadad;
+  position:absolute;
+  bottom:10px;
+  text-align: center;
+  
+  left:20%;
 }
