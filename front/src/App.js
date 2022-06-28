@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import image from './assets/logo.jpg'
 
-const api = {
-  key: "f0590670e28f43129d763516222806",
-  base: "https://api.weatherapi.com/v1/"
-}
-
 function App() {
   const [query, setQuery] = useState('')
   const [weather, setWeather] = useState({})
 
+  /*
+    Search function is activated either by clicking enter or clicking the search button.
+    evt is a type of event that we can check before proceeding with accessing our Node.js server.
+    We are extracting from the server the current weather information and placing it inside 'weather' variable.
+    we then reset the query to be "" again.
+  */
   const search = evt => {
-    console.log(evt)
     if (evt.key === "Enter" || evt.type === "click") {
       fetch(`http://localhost:3001/getWeatherInfo/city?city=${query}`,
         {
@@ -25,7 +25,6 @@ function App() {
         .then(result => {
           setWeather(result)
           setQuery("")
-          console.log(result.location)
         })
     }
   }
@@ -45,12 +44,15 @@ function App() {
   return (
     <div className="app">
       <main>
+        {/* LEFT SIDE */}
         <div className="split left">
+          {/* logo */}
           <img alt="logo" src={image} height={100} width={150} />
+          {/* introduction paragarph */}
           <div className="intro">
             Use our weather app to see the weather around the world
           </div>
-
+          {/* search bar */}
           <div className="search-box">
             <input type="text"
               className="search-bar"
@@ -59,13 +61,17 @@ function App() {
               value={query}
               onKeyPress={search}
             />
+            {/* search button */}
             <button id="check"
               onChange={e => setQuery(e.target.value)}
               value={query}
               onClick={search}>Check</button>
           </div>
         </div>
+        {/* left-side */}
+        {/* RIGHT SIDE */}
         <div className="split right">
+          {/* check if there is a response, if not leave the page empty */}
           {(typeof weather.location != "undefined") ? (
             <div className="outer-box">
               <div className="location-box">
@@ -97,6 +103,7 @@ function App() {
             </div>
           ) : ('')}
         </div>
+        {/* right-side */}
       </main >
 
     </div >
