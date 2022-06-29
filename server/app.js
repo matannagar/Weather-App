@@ -1,6 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
+//process.env.PORT allows heroku to choose the port
 const port = process.env.PORT || 3001;
 
 /*
@@ -13,9 +14,8 @@ const api = {
     base: "https://api.weatherapi.com/v1/"
 }
 
-/*
-Allowing CORS
-*/
+
+//Allowing CORS
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
