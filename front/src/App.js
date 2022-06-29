@@ -14,7 +14,7 @@ function App() {
   const search = evt => {
     if (query !== '') {
       if (evt.key === "Enter" || evt.type === "click") {
-        // If you want to do it locally: `http://localhost:3001/getWeatherInfo/city?city=${query}`
+        // If you want to do it locally: ``http://localhost:3001/getWeatherCity/?city=${query}``
         fetch(`https://weatherapplication10.herokuapp.com/getWeatherCity?city=${query}`,
           {
             method: "GET",
