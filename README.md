@@ -41,5 +41,5 @@ npm install
 The current React.js app is requesting data from the **deployed server**.
 To make the app send requests to the local server (folder server):  
 1. Access front/src/App.js
-2. In App.js line 17 appears the alternative link (`http://localhost:3001/getWeatherInfo/city?city=${query}`)
+2. In App.js line 17 appears the alternative link (`http://localhost:3001/getWeatherCity?city=${query}`)
 3. Copy the previous link and paste it instead of the link in line 18 (inside the fetch function)
