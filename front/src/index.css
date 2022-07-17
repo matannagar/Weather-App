@@ -6,99 +6,51 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Heebo', sans-serif;
-
-}
-
 .app {
+  font-family: 'Heebo', sans-serif;
   background-size: cover;
   background-position: bottom;
   transition: 0.4 ease;
-}
-
-.split {
-  height: 100%;
-  width: 55%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-/* Control the left side */
-.left {
-  left: 0;
   background-color: #f1f1f1;
 }
 
-/* Control the right side */
-.right {
-  right: 0;
-  background-color: #dde4e6;
-  
+.container {
+  display: flex;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 15px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.row {
-  text-align:center;
-  align-content:center;
-  color:#FFF;
-  font-size: 18px;
-  
+.block{
+  flex: 1;
 }
 
-.col {
-  float: left;
-  width: 33%;
-  padding: 10px;
-  height: 30px; /* Should be removed. Only for demonstration */
-  
+.logo{
+  flex:1;
 }
 
 .intro {
-  width: 50%;
-  margin: 10px 75px 75px;
+  flex:1;
+  margin:auto;
+  width:50%;
+  text-align: center;
   color: #929292;
   font-size: 32px;
   font-weight: 500;
-  text-align: center;
-  
-
-}
-
-main {
-  min-height: 100vh;
-  background-color: #f1f1f1;
-  padding: 25px;
-  
-}
-
-.outer-box{
-  
-  display: inline-table;
-  background-color: #27737d;
-  border-radius: 16px;
-  padding:20px;
-    margin-left: 25%;
-    margin-top:5%;
-    width: 450px;
-    height: 530px;
-  
-
 }
 
 .search-box {
-  width: 50%;
-  position: relative;
-  margin: 10px 75px 75px;
-  
+  display:flex;
+  justify-content: center;
+  margin-top: 8%;
+  flex:1;
 }
 
-.search-box .search-bar {
-  display: block;
-  width: 100%;
-  padding: 15px;
+.search-bar {
+  width: 50%;
+  padding: 20px;
 
   appearance: none;
   background: none;
@@ -117,9 +69,63 @@ main {
   transition: 0.4s ease;
 }
 
-.search-box .search-bar:focus {
+.search-bar:focus {
   background-color: rgba(255, 255, 255, 0.75);
 }
+
+
+.coordinates{
+  flex:1;
+  margin:200px 0 0 0;
+  color:#adadad;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.row {
+  text-align:center;
+  align-content:center;
+  color:#FFF;
+  font-size: 18px;
+  
+}
+
+.col {
+  float: left;
+  width: 33%;
+  padding: 10px;
+  height: 30px; /* Should be removed. Only for demonstration */
+  
+}
+
+.outer-box{
+  
+  display: inline-table;
+  background-color: #27737d;
+  border-radius: 16px;
+  padding:20px;
+    margin-left: 25%;
+    margin-top:5%;
+    width: 450px;
+    height: 530px;
+  
+
+}
+
 
 .location-box .location {
   color: #FFF;
@@ -187,13 +193,7 @@ button {
   
 }
 
-.bottomPage{
-  color:#adadad;
-  position:absolute;
-  bottom:10px;
-  text-align: center;
-  left:20%;
-}
+
 
 /* Create two equal columns that floats next to each other */
 .column {
@@ -210,9 +210,4 @@ button {
   clear: both;
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
+

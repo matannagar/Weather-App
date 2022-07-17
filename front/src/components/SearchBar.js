@@ -11,10 +11,10 @@ function SearchBar({ query, setQuery, search }) {
                 onKeyPress={search}
             />
             {/* search button */}
-            <button id="check"
+            {/* <button id="check"
                 onChange={e => setQuery(e.target.value)}
                 value={query}
-                onClick={search}>Check</button>
+                onClick={search}>Check</button> */}
         </div>
     )
 }

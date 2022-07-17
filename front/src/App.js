@@ -45,9 +45,9 @@ function App() {
 
   return (
     <div className="app">
-      <main>
+      <div className="container">
         {/* LEFT SIDE */}
-        <div className="split left">
+        <div className="block">
           <Logo />
           <Introduction />
           <SearchBar
@@ -63,7 +63,7 @@ function App() {
         {/* left-side */}
 
         {/* RIGHT SIDE */}
-        <div className="split right">
+        <div className="block">
           {(typeof weather.location != "undefined") ? (
             <div className="outer-box">
               <Location
@@ -75,7 +75,7 @@ function App() {
           ) : ('')}
         </div>
         {/* right-side */}
-      </main>
+      </div>
     </div >
   );
 }
