@@ -14,7 +14,7 @@ function App() {
     if (query !== '') {
       if (evt.key === "Enter" || evt.type === "click") {
         // If you want to do it locally: `http://localhost:3001/getWeatherCity/?city=${query}`
-        fetch(`https://weatherapplication10.herokuapp.com/getWeatherCity?city=${query}`,
+        fetch(`http://localhost:3001/getWeatherCity/?city=${query}`,
           {
             method: "GET",
             headers: new Headers({
