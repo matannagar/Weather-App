@@ -8,27 +8,31 @@
 
 .app {
   font-family: 'Heebo', sans-serif;
-  background-size: cover;
-  background-position: bottom;
   transition: 0.4 ease;
   background-color: #f1f1f1;
+  width: 100vw;
+  min-height: 100vh;
 }
 
-.container {
+.row{
   display: flex;
-  max-width: 1500px;
+  flex-wrap: wrap;
   margin: 0 auto;
-  padding: 15px;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.block{
-  flex: 1;
+.app .row {
+  padding: 35px;
+  justify-content:space-between;
+  min-height: 100vh;
 }
 
-.logo{
-  flex:1;
+.col{
+  flex-grow: 1;
+  
+  flex-direction: vertical;
+  max-width:100vh;
+  
 }
 
 .intro {
@@ -44,7 +48,7 @@
 .search-box {
   display:flex;
   justify-content: center;
-  margin-top: 8%;
+  margin-top: 10%;
   flex:1;
 }
 
@@ -68,11 +72,9 @@
 
   transition: 0.4s ease;
 }
-
 .search-bar:focus {
   background-color: rgba(255, 255, 255, 0.75);
 }
-
 
 .coordinates{
   flex:1;
@@ -81,51 +83,28 @@
   text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.row {
-  text-align:center;
-  align-content:center;
-  color:#FFF;
-  font-size: 18px;
-  
-}
-
-.col {
-  float: left;
-  width: 33%;
-  padding: 10px;
-  height: 30px; /* Should be removed. Only for demonstration */
-  
-}
-
-.outer-box{
-  
-  display: inline-table;
-  background-color: #27737d;
-  border-radius: 16px;
-  padding:20px;
-    margin-left: 25%;
-    margin-top:5%;
-    width: 450px;
-    height: 530px;
-  
+.col:nth-of-type(2){
+  display:flex;
+  background-color: #dde4e6;
+  /* horizontal */
+  justify-content: center;
+  /* vertical */
+  align-items: center;
+  border-radius: 30px;
 
 }
 
+.col .outer-box{
+  
+ background-color:#27737d; 
+
+ display:flex;
+ flex-direction:vertical;
+ flex-basis: 500px;
+ min-height: 600px;
+ border-radius: 30px;
+ justify-content: center;
+}
 
 .location-box .location {
   color: #FFF;
@@ -139,12 +118,13 @@
   font-size: 20px;
   font-weight: 300;
   text-align: center;
-  
 }
 
-.weather-box {
-  text-align: center;
-  }
+
+
+.location-box{
+  flex:1;
+}
 
 .weather-box .temp {
   color: #FFF;
@@ -152,30 +132,36 @@
   font-weight: 900;
     
 }
-
 .weather-box .weather {
   color: #FFF;
   font-size: 48px;
   font-weight: 500;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
-  
 }
 
-/* Button design is taken from here:
-https://www.geeksforgeeks.org/how-to-put-a-responsive-clear-button-inside-html-input-text-field/ 
-*/
+.weather-box {
+  text-align: center;
+  }
 
-input {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  outline: none;
-  height: 50px;
-  border-radius: 5px;
-  
+  .info {
+    margin-top: 50px;
+    color:white;
+  }
+.info ul{
+  display: flex;
 }
 
+.info ul li {
+  margin-left: 20px;
+}
 
+  ul {
+    list-style-type: none;
+  }
+
+
+
+/*
 button {
   position: absolute;
   top: 0;
@@ -190,24 +176,7 @@ button {
   color: white;
   background-color: #046b3b;
   transform: translateX(2px);
-  
-}
+} */
 
-
-
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
 

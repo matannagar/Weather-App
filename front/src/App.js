@@ -45,9 +45,9 @@ function App() {
 
   return (
     <div className="app">
-      <div className="container">
+      <div className="row">
         {/* LEFT SIDE */}
-        <div className="block">
+        <div className="col">
           <Logo />
           <Introduction />
           <SearchBar
@@ -63,19 +63,22 @@ function App() {
         {/* left-side */}
 
         {/* RIGHT SIDE */}
-        <div className="block">
-          {(typeof weather.location != "undefined") ? (
-            <div className="outer-box">
-              <Location
-                weather={weather}
-                dateGenerator={dateGenerator}
-              />
-              <Weather weather={weather} />
-            </div>
-          ) : ('')}
+        <div className="col">
+          <div className="outer-box">
+            &nbsp;
+            {(typeof weather.location != "undefined") ? (
+              <div className="inner-box">
+                <Location
+                  weather={weather}
+                  dateGenerator={dateGenerator}
+                />
+                <Weather weather={weather} />
+              </div>
+            ) : ('')}
+          </div>
         </div>
-        {/* right-side */}
       </div>
+      {/* right-side */}
     </div >
   );
 }
