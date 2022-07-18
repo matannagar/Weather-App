@@ -179,4 +179,9 @@ button {
 } */
 
 
+@media (max-width: 768px) {
+.coordinates{
+  margin: 50px auto;
+}
+}
 
